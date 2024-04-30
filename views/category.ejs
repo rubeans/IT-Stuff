@@ -1,0 +1,11 @@
+<%- include('layout/top') %>
+
+<h1><%= title %></h1>
+
+<ul>
+  <% docs.forEach(doc => { %>
+  <li><a href="<%=doc.url%>"><%= doc.name %></a></li>
+  <% }); %>
+</ul>
+
+<%- include('layout/bottom') %>
