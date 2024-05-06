@@ -1,0 +1,10 @@
+<%- include('layout/top') %>
+
+<h1><%= title %></h1>
+
+<p>Description: <%= doc.description %></p>
+<p>Category: <a href="<%= doc.category.url %>"><%= doc.category.name %></a></p>
+<p>Price: $<%= doc.price%></p>
+<p>Number on stock: <%= doc.stock %></p>
+
+<%- include('layout/bottom') %>

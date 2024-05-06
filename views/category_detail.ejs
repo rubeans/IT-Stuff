@@ -1,0 +1,11 @@
+<%- include('layout/top') %>
+
+<h1><%= title %> - <%= description %></h1>
+
+<% items.forEach(item =>{ %>
+<% if(title === item.category.name){ %>
+<p><a href="<%=item.url%>"><%=item.name%></a></p>
+<% } %>
+<% }) %>
+
+<%- include('layout/bottom') %>

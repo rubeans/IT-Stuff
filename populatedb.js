@@ -4,33 +4,53 @@ const mongoose = require('mongoose')
 const Item = require('./models/item')
 const Category = require('./models/category')
 
+const mobo_id = "662b065c64374eec29046da1"
+const cpu_id = "662b065c64374eec29046da2"
+const gpu_id = "662b065c64374eec29046da3"
+const ram_id = "662b065c64374eec29046da4"
+const storage_id = "662b065c64374eec29046da5"
+
 const defaultItems = [
   {
-    name: "i3 12100F",
-    description: "INTEL 3° Generation",
-    category: "662b065c64374eec29046da2",
-    price: 137.99,
-    stock: 14
+    name: "i9 13100F",
+    description: "INTEL 9 13° Generation",
+    category: cpu_id,
+    price: 489.90,
+    stock: 3
   },
   {
-    name: "RTX 4090",
-    description: "NVIDIA's lastest graphic card",
-    category: "662b065c64374eec29046da1",
-    price: 499.90,
-    stock: 6
+    name: "RTX 1660",
+    description: "NVIDIA's graphic card",
+    category: gpu_id,
+    price: 310,
+    stock: 10
   },
   {
-    name: "8GB RAM",
-    description: "DDR4 2666Hz",
-    category: "662b065c64374eec29046da4",
-    price: 49.99,
-    stock: 32
+    name: "RAM Smart 4GB",
+    description: "DDR3 1333Hz",
+    category: ram_id,
+    price: 24.99,
+    stock: 45
   },
   {
-    name: "Kingston SSD 1TB",
-    description: "Read: 460, Write: 440",
-    category: "662b065c64374eec29046da5",
-    price: 87.30,
+    name: "MSI A520M-A PRO",
+    description: "Chipset A520, AMD AM4, mATX, DDR4",
+    category: mobo_id,
+    price: 300,
+    stock: 5
+  },
+  {
+    name: "ASUS - ROG Strix B760-G Gaming WiFi",
+    description: "LGA1700, DDR5, PCIe 5.0, WiFi 6E, Bluetooth v5.3, mATX",
+    category: mobo_id,
+    price: 599.90,
+    stock: 1
+  },
+  {
+    name: "2 TB SEAGATE",
+    description: "Read: 260, Write: 250",
+    category: storage_id,
+    price: 43.99,
     stock: 21
   }
 ]
