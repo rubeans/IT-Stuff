@@ -8,6 +8,18 @@ exports.show_items = asyncHandler(async (req, res) => {
     // console.log(docs)
 })
 
+exports.newItem = asyncHandler(async(req, res) => {
+    res.redirect('add_items')
+})
+
+exports.addNewItem = asyncHandler( async (req, res) => {
+    const {name, description, category, price, stock} = req.body
+
+    console.log(name, description, category, price, stock);
+
+    res.status(200).send()
+})
+
 // show one item
 exports.item_detail = asyncHandler(async (req, res) => {
     const doc = await Item.findById(req.params.id).populate('category').exec()

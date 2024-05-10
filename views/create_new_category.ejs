@@ -1,0 +1,14 @@
+<%- include('layout/top') %>
+
+<h1><%=title%></h1>
+
+<form method="post">
+    <select name="name" id="whatever">
+        <option value="Carros">Carros</option>
+        <option value="Moto">Moto</option>
+    </select>
+    <input type="text" name="description" placeholder="A nice gamer chair">
+    <button type="submit">Create</button>
+</form>
+
+<%- include('layout/bottom') %>

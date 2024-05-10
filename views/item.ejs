@@ -1,11 +1,25 @@
 <%- include('layout/top') %>
 
 <h1><%= title %></h1>
-
+<!-- 
 <ul>
   <% docs.forEach(doc => { %>
   <li><a href="<%=doc.url%>"><%= doc.name %></a></li>
   <% }); %>
 </ul>
+ -->
 
+
+ <div class="d-grid">
+  <div class="row gap-2">
+    <% docs.forEach(doc => { %>
+      <div class="col-md-3 text-center p-3 bg-danger text-light">
+        <a class="d-block mb-4 text-decoration-none text-light p" href="<%=doc.url%>"><%= doc.name %></a>
+        <p clas="pt-3">R$ <%=doc.price%></p>
+        <p><%=doc.description%></p>
+        <p>Em estoque: <%=doc.stock%></p>
+      </div>
+    <% }); %>
+  </div>
+ </div>
 <%- include('layout/bottom') %>

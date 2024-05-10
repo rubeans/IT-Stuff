@@ -9,6 +9,33 @@ exports.show_category = asyncHandler(async (req, res) => {
     // console.log(docs)
 })
 
+exports.addCategory = asyncHandler(async(req,res) => {
+    /* const {name, description} = req.body;
+
+    const newCategory = {
+        name,
+        description
+    }
+
+    const category = await Category.create(newCategory) */
+    res.render('create_new_category', {title: "Create new Category"});
+
+})
+
+exports.addNewCategory = asyncHandler(async(req,res) => {
+    
+    const {name, description} = req.body;
+
+    const newCategory = {
+        name,
+        description
+    }
+
+    const category = await Category.create(newCategory)
+
+    res.redirect('/categories')
+})
+
 // show one Category
 exports.category_detail = asyncHandler(async (req, res) => {
     const doc = await Category.findById(req.params.id).exec()

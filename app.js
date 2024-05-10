@@ -9,7 +9,8 @@ database_connection()
 
 const indexRouter = require('./routes/index');
 const itemRouter = require('./routes/item')
-const categoryRouter = require('./routes/category')
+const categoryRouter = require('./routes/category');
+const { addCategory } = require('./controllers/categoryController.js');
 
 const app = express();
 
