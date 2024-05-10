@@ -17,12 +17,13 @@ exports.item_detail = asyncHandler(async (req, res) => {
 })
 
 
-// add new item page
+//  load item form
 exports.item_form = asyncHandler(async (req, res) => {
     const docs = await Category.find({}).exec()
     res.render('item_form', { title: "Add new Item", docs: docs })
 })
 
+// add new item
 exports.add_item = asyncHandler(async (req, res) => {
     const { name, description, category, price, stock } = req.body
     const newItem = {

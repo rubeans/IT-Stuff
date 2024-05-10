@@ -16,3 +16,17 @@ exports.category_detail = asyncHandler(async (req, res) => {
     // console.log(doc)
     res.render('category_detail', { title: doc.name, description: doc.description, items: items })
 })
+
+// category form
+exports.category_form = asyncHandler(async (req, res) => {
+    res.render('category_form', { title: "Add new category" })
+})
+
+exports.add_category = asyncHandler(async (req, res) => {
+    const { name, description } = req.body
+    const newCategory = {
+        name, description
+    }
+    await Category.create(newCategory)
+    res.redirect('/categories')
+})

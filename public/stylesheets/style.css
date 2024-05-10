@@ -16,6 +16,10 @@ body {
     'sidebar main main';
 }
 
+input, select{
+  display: block;
+}
+
 #kwqblvqor4 {
   display: none;
 }
