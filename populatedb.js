@@ -60,7 +60,8 @@ const defaultCategories = [
   { name: "CPU", description: "Central Processing Unit" },
   { name: "GPU", description: "Graphic Processing Unit" },
   { name: "RAM", description: "Random-Access Memory" },
-  { name: "Storage", description: "HD, SSD, CD, Cloud, etc." }
+  { name: "Storage", description: "HD, SSD, CD, Cloud, etc." },
+  { name: "Peripherals", description: "Mouse, Keyboard, Headset, etc." }
 ]
 
 run().catch(e => console.error(e))

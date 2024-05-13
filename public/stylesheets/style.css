@@ -16,7 +16,12 @@ body {
     'sidebar main main';
 }
 
-input, select{
+a {
+  text-decoration: none;
+}
+
+input,
+select {
   display: block;
 }
 

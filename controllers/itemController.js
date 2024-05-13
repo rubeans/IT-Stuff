@@ -16,7 +16,6 @@ exports.item_detail = asyncHandler(async (req, res) => {
     res.render('item_detail', { title: doc.name, doc: doc })
 })
 
-
 //  load item form
 exports.item_form = asyncHandler(async (req, res) => {
     const docs = await Category.find({}).exec()
@@ -31,4 +30,9 @@ exports.add_item = asyncHandler(async (req, res) => {
     }
     await Item.create(newItem)
     res.redirect('/items')
+})
+
+// update item
+exports.update_form = asyncHandler(async (req, res) => {
+    res.send('<h1>update page</h1>')
 })

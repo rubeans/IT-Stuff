@@ -10,4 +10,6 @@ router.post('/add', itemController.add_item)
 
 router.get('/:id', itemController.item_detail)
 
+router.get('/update/:id', itemController.update_form)
+
 module.exports = router;
