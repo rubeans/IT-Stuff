@@ -1,0 +1,19 @@
+<%- include('layout/top') %>
+
+<h1><%= title %></h1>
+
+<form method="post">
+  <input type="text" placeholder="Name" required name="name">
+  <textarea placeholder="Description" required name="description"></textarea>
+  <select name="category" id="category" required name="category">
+    <option value="">Choose a Category</option>
+    <%docs.forEach(doc=>{ %>
+    <option value="<%= doc._id %>"><%= doc.name %></option>
+    <% }) %>
+  </select>
+  <input type="number" placeholder="Price" required name="price">
+  <input type="number" placeholder="Stock" required name="stock">
+  <button type="submit">Update</button>
+</form>
+
+<%- include('layout/bottom') %>
