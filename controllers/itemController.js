@@ -34,8 +34,8 @@ exports.add_item = asyncHandler(async (req, res) => {
 
 // update form
 exports.update_form = asyncHandler(async (req, res) => {
-    const docs = await Category.find({})
-    res.render('itemUpdate_form.ejs', { title: 'Update Item', docs: docs })
+    const categories = await Category.find({})
+    res.render('itemUpdate_form.ejs', { title: 'Update Item', categories: categories})
 })
 
 // update item
