@@ -29,21 +29,31 @@ exports.add_item = asyncHandler(async (req, res) => {
         name, description, category, price, stock
     }
     await Item.create(newItem)
+    console.log("New Item Added")
     res.redirect('/items')
 })
 
 // update form
 exports.update_form = asyncHandler(async (req, res) => {
+    const itemId = req.params.id
+    const item = await Item.findById(itemId)
     const categories = await Category.find({})
-    res.render('itemUpdate_form.ejs', { title: 'Update Item', categories: categories})
+    res.render('itemUpdate_form.ejs', { title: 'Update Item', categories: categories, item: item })
 })
 
 // update item
 exports.update_item = asyncHandler(async (req, res) => {
-    // const itemId = req.params.id
-    // const { name, description, category, price, stock } = req.body
+    const itemId = req.params.id
+    const { name, description, category, price, stock } = req.body
+    await Item.findByIdAndUpdate(itemId, { name, description, category, price, stock })
+    console.log("Item Updated")
+    res.redirect(`/items/${itemId}`)
+})
 
-    // await Item.findByIdAndUpdate(itemId, { name, description, category, price, stock })
-
-    // res.send('item updated')
+// delete item
+exports.delete_item = asyncHandler(async (req, res) => {
+    const itemId = req.params.id
+    await Item.findByIdAndDelete(itemId)
+    console.log("Item Deleted")
+    res.redirect('/items')
 })

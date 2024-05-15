@@ -11,8 +11,8 @@
     <option value="<%= doc._id %>"><%= doc.name %></option>
     <% }) %>
   </select>
-  <input type="number" placeholder="Price" required name="price">
-  <input type="number" placeholder="Stock" required name="stock">
+  <input type="number" minlength="0" maxlength="10000" placeholder="Price" required name="price">
+  <input type="number" minlength="0" maxlength="10000" placeholder="Stock" required name="stock">
   <button type="submit">Add</button>
 </form>
 

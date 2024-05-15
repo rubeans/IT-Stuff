@@ -13,4 +13,8 @@ router.get('/:id', itemController.item_detail)
 
 router.get('/:id/update', itemController.update_form)
 
+router.post('/:id/update', itemController.update_item)
+
+router.get('/:id/delete', itemController.delete_item)
+
 module.exports = router;

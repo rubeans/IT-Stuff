@@ -1,15 +1,15 @@
-<h1><%= title %></h1>
+<h1><%= title %> => <%= item.name %></h1>
 
 <form method="post">
-  <input style="display: block;" type="text" placeholder="name" required name="name">
-  <textarea placeholder="Description" required name="description"></textarea>
+  <label for="name">Name:<input style="display: block;" type="text" placeholder="name" required name="name" value="<%= item.name %>"></label>
+  <label for="description">Description:<textarea style="display: block;" placeholder="Description" required name="description"><%= item.description%></textarea></label>
   <select name="category" id="category" required name="category" style="display: block;">
     <option value="">Choose a Category</option>
     <%categories.forEach(category=>{ %>
     <option value="<%= category._id %>"><%= category.name %></option>
     <% }) %>
   </select>
-  <input style="display: block;" type="number" placeholder="Price" required name="price">
-  <input style="display: block;" type="number" placeholder="Stock" required name="stock">
+  <label for="price">Price:<input style="display: block;" minlength="0" maxlength="10000" type="number" placeholder="Price" required name="price" value="<%= item.price%>"></label>
+  <label for="stock">Items on stock:<input style="display: block;" minlength="0" maxlength="10000" type="number" placeholder="Stock" required name="stock" value="<%= item.stock%>"></label>
   <button type="submit">Update</button>
 </form>
