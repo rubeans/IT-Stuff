@@ -1,6 +1,19 @@
 const Item = require('../models/item')
 const Category = require('../models/category')
 const asyncHandler = require("express-async-handler");
+const path = require('path')
+const multer = require('multer')
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+        cb(null, "../public/images")
+    },
+    filename: (req, file, cb) => {
+        console.log(file)
+        cb(null, Date.now() + path.extname(file.originalname))
+    }
+})
+
+const upload = multer({ storage: storage })
 
 //show all Items
 exports.show_items = asyncHandler(async (req, res) => {
@@ -23,7 +36,7 @@ exports.item_form = asyncHandler(async (req, res) => {
 })
 
 // add new item
-exports.add_item = asyncHandler(async (req, res) => {
+exports.add_item = upload.single("image"), asyncHandler(async (req, res) => {
     const { name, description, category, price, stock } = req.body
     const newItem = {
         name, description, category, price, stock
