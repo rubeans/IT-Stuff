@@ -2,7 +2,7 @@
 
 <h1><%= title %></h1>
 
-<form method="post" enctype="multipart/form-data">
+<form method="post">
   <input type="text" placeholder="Name" required name="name">
   <textarea placeholder="Description" required name="description"></textarea>
   <select name="category" id="category" required name="category">
@@ -13,7 +13,6 @@
   </select>
   <input type="number" minlength="0" maxlength="10000" placeholder="Price" required name="price">
   <input type="number" minlength="0" maxlength="10000" placeholder="Stock" required name="stock">
-  <input type="file" name="image">
   <button type="submit">Add</button>
 </form>
 
